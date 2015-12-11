@@ -1,13 +1,26 @@
 #!/bin/bash
 # https://forums.cpanel.net/threads/how-to-installing-ssl-from-lets-encrypt.513621/
-if [ $# == 1 ] || [ $# == 2 ]; then
+
+if [ $# == 1 ] || [ $# == 2 ] || [ $# == 3 ]; then
+  test $(userdomains ${USER}|wc -l) -ne 1 &&\
+  echo "USAGE: $0 USER DOMAIN EMAIL" && exit 0 ||\
+  export DOMAIN=$(userdomains ${USER}) &&\
+  echo "Found domain name ${DOMAIN}."
+
   export USER=$1
-  export DOMAIN=$(/usr/local/bin/userdomains ${USER})
+
+  if [ $# == 3 ]; then
+    export DOMAIN=$3
+  elif [ $# == 1 ] || [ $# == 2]; then
+    export DOMAIN=$(/usr/local/bin/userdomains ${USER})
+  fi  
+
   if [ $# == 2 ]; then
     export EMAIL=$2
   elif [ $# == 1 ]; then
     export EMAIL=${USER}@${DOMAIN}
   fi 
+
 elif [ $# == 0 ] || [ $# >= 3 ]; then
   echo ""
   read -e -p "Enter your cPanel username" -i "" USER
