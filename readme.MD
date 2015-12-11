@@ -20,7 +20,9 @@ Usually run by cron for each domain once every 60 days to renew the ssl certific
 
 ## Installation
 
-`sudo su - && hg clone https://bitbucket.org/webstandardcss/lets-encrypt-for-cpanel-centos-6.x /usr/local/sbin/letsencrypt && ln -s /usr/local/sbin/letsencrypt/letsencrypt-cpanel* /usr/local/sbin/ && /usr/local/sbin/letsencrypt/letsencrypt-cpanel-install.sh`
+**Make sure logged in as root**
+
+`hg clone https://bitbucket.org/webstandardcss/lets-encrypt-for-cpanel-centos-6.x /usr/local/sbin/letsencrypt && ln -s /usr/local/sbin/letsencrypt/letsencrypt-cpanel* /usr/local/sbin/ && /usr/local/sbin/letsencrypt/letsencrypt-cpanel-install.sh`
 
 #### Verification
 
