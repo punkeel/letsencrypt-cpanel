@@ -32,7 +32,7 @@ When you succeed in installing then you may see the letsencrypt directory and sy
 
 ### Uninstall
 
-`sudo rm -rf /usr/local/sbin/letsencrypt /usr/local/sbin/letsencrypt* /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt && echo "Uninstall Complete"`
+`sudo rm -rf /usr/local/sbin/letsencrypt /usr/local/sbin/letsencrypt* /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt && echo "Uninstall Complete: You can paste in verification to ensure the files are gone."`
 
 ### How to Enable EPEL Repository for RHEL/CentOS 7.x/6.x/5.x
 
