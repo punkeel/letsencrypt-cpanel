@@ -1,10 +1,11 @@
 #!/bin/bash
 
 echo "Generated file is located at: /root/installssl.pl"
-echo "cPanel API can install your generate cert."
+echo "so that cPanel API can install your generate cert."
+echo "For security you will not see the password you type."
 echo "Enter your root password: "
 
-read ROOTPASS
+read -s ROOTPASS
 
 rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 rpm -ivh https://rhel6.iuscommunity.org/ius-release.rpm
