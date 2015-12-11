@@ -12,7 +12,7 @@ if [ $# == 1 ] || [ $# == 2 ] || [ $# == 3 ]; then
   if [ $# == 3 ]; then
     export DOMAIN=$3
   elif [ $# == 1 ] || [ $# == 2]; then
-    export DOMAIN=$(/usr/local/bin/userdomains ${USER})
+    export DOMAIN=$(/usr/local/sbin/userdomains ${USER})
   fi  
 
   if [ $# == 2 ]; then
@@ -24,7 +24,7 @@ if [ $# == 1 ] || [ $# == 2 ] || [ $# == 3 ]; then
 elif [ $# == 0 ] || [ $# >= 3 ]; then
   echo ""
   read -e -p "Enter your cPanel username: " -i "" USER
-  export DOMAIN=$(/usr/local/bin/userdomains ${USER})
+  export DOMAIN=$(/usr/local/sbin/userdomains ${USER})
   echo ""
   read -e -p "Enter your email address or press enter to accept the default: " -i "webmaster@${DOMAIN}" EMAIL
   echo "Usage: $0 USER [EMAIL]"
