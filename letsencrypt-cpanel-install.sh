@@ -14,16 +14,17 @@ echo "Enter your root password: "
 read -s ROOTPASS
 
 if [ "${OS_VERSION}" -ge "7" ]
+then
   yum -y install git
   cd /root
   git clone https://github.com/letsencrypt/letsencrypt
   cd /root/letsencrypt
   ./letsencrypt-auto --verbose
   echo "** Done installing Git and Lets Encrypt"
-then;
 fi
 
 if [ "${OS_VERSION}" -le "6" ]
+then
   rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
   rpm -ivh https://rhel6.iuscommunity.org/ius-release.rpm
   yum -y install git python27 python27-devel python27-pip python27-setuptools python27-virtualenv --enablerepo=ius
@@ -33,7 +34,6 @@ if [ "${OS_VERSION}" -le "6" ]
   sed -i "s|--python python2|--python python2.7|" letsencrypt-auto
   ./letsencrypt-auto --verbose
   echo "** Done installing Python 2.7 and Lets Encrypt"
-then;
 fi
 
 touch /root/installssl.pl
