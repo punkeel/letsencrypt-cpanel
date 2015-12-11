@@ -26,7 +26,7 @@ _Make sure logged in as root_
 
 ### Verification
 
-`ls -ald /usr/local/sbin/letsencrypt* /root/{installssl.pl,letsencrypt} /etc/letsencrypt/live/bundle.txt && head -n12 /etc/letsencrypt/live/bundle.txt /root/installssl.pl && echo "You can check these files and directory listings to ensure that Let's Encrypt is successfully installed."`
+`ls -ald /usr/local/sbin/letsencrypt* /root/{installssl.pl,letsencrypt} /etc/letsencrypt/live/bundle.txt && head -n12 /etc/letsencrypt/live/bundle.txt /root/installssl.pl /usr/local/sbin/userdomains && echo "You can check these files and directory listings to ensure that Let's Encrypt is successfully installed."`
 
 When you succeed in installing then you may see the letsencrypt directory and symlinks to the executables in `/usr/local/sbin`.  In `/root/` The letsencrypt source files and a `installssl.pl` file which will install your new SSL certificates into cPanel. Also you can ensure that the intermediate certificates are listed in `/etc/letsencrypt/live/bundle.txt`.
 
@@ -34,7 +34,7 @@ When you succeed in installing then you may see the letsencrypt directory and sy
 
 _Uninstalling will not remove any existing certificates._
 
-`sudo rm -rf /usr/local/sbin/letsencrypt /usr/local/sbin/letsencrypt* /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt && echo "Uninstall Complete: You can paste in verification to ensure the files are gone."`
+`sudo rm -rf /usr/local/sbin/letsencrypt /usr/local/sbin/letsencrypt* /usr/local/sbin/userdomains /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt && echo "Uninstall Complete: You can paste in verification to ensure the files are gone."`
 
 
 ### How to Enable EPEL Repository for RHEL/CentOS 7.x/6.x/5.x
