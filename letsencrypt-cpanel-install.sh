@@ -84,6 +84,8 @@ my $response = $ua->request($request);
 print $response->content;
 EOF
 
+mkdir -p /etc/letsencrypt/live/
+
 cat << EOFFF > /etc/letsencrypt/live/bundle.txt
 -----BEGIN CERTIFICATE-----
 MIIEqDCCA5CgAwIBAgIRAJgT9HUT5XULQ+dDHpceRL0wDQYJKoZIhvcNAQELBQAw
