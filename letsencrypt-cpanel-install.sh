@@ -36,6 +36,14 @@ then
   echo "** Done installing Python 2.7 and Lets Encrypt"
 fi
 
+touch /usr/local/sbin/userdomains
+chmod 755 /usr/local/sbin/userdomains
+cat << "EOF" > /usr/local/sbin/userdomains
+#!/bin/bash
+
+grep -E ": $1\$" /etc/userdomains | awk '{print$1}' | sed 's/:$//'
+EOF
+
 touch /root/installssl.pl
 chmod 755 /root/installssl.pl
 cat << "EOF" > /root/installssl.pl
@@ -105,7 +113,7 @@ EOF
 
 mkdir -p /etc/letsencrypt/live/
 
-cat << EOFFF > /etc/letsencrypt/live/bundle.txt
+cat << "EOFFF" > /etc/letsencrypt/live/bundle.txt
 -----BEGIN CERTIFICATE-----
 MIIEqDCCA5CgAwIBAgIRAJgT9HUT5XULQ+dDHpceRL0wDQYJKoZIhvcNAQELBQAw
 PzEkMCIGA1UEChMbRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3QgQ28uMRcwFQYDVQQD
