@@ -1,10 +1,16 @@
 #!/bin/bash
 
+export OS_RELEASE=$(rpm -qa '(oraclelinux|sl|redhat|centos)-release(|-server)')
+export OS_VERSION=$(echo ${OS_RELEASE}|cut -d- -f3)
+export OS_ARCH=$(echo ${OS_RELEASE}|grep -o '..$')
+echo "OS Release is: ${OS_RELEASE}"
+echo "Your OS version is: ${OS_VERSION}"
+echo "You have a ${OS_ARCH} bit processor."
+echo ""
 echo "Generated file is located at: /root/installssl.pl"
 echo "so that cPanel API can install your generate cert."
 echo "For security you will not see the password you type."
 echo "Enter your root password: "
-
 read -s ROOTPASS
 
 rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
