@@ -26,7 +26,7 @@ Usually run by cron for each domain once every 60 days to renew the ssl certific
 
 ### Verification
 
-`ls -al /usr/local/sbin/ && ls -al /root && head -n100 /etc/letsencrypt/live/bundle.txt`
+`ls -al /usr/local/sbin/ && ls -al /root && head -n100 /etc/letsencrypt/live/bundle.txt /root/installssl.pl`
 
 When you succeed in installing then you may see the letsencrypt directory and symlinks to the executables in `/usr/local/sbin`.  In `/root/` The letsencrypt source files and a `installssl.pl` file which will install your new SSL certificates into cPanel. Also you can ensure that the intermediate certificates are listed in `/etc/letsencrypt/live/bundle.txt`.
 
