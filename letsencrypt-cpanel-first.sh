@@ -23,7 +23,6 @@ elif [ $# == 0 ] || [ $# > 3 ]; then
   echo ""
   read -e -p "Enter your email address or press enter to accept the default: " -i "webmaster@${DOMAIN}" EMAIL
   echo "Usage: $0 USER [DOMAIN] [EMAIL]"
-  exit
 fi
 
 
