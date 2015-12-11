@@ -2,7 +2,7 @@
 
 ## Description
 
-Here is a light wrapper that installs SSL certificates to your cPanel server and automatically renews them using the Let's Encrypt command line tool for cPanel and CentOS 6.x. 
+Here is a light wrapper that installs SSL certificates to your cPanel server and automatically renews them using the Let's Encrypt command line tool for cPanel and CentOS 6 and up. 
 
 ## Usage
 
