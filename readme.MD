@@ -6,17 +6,33 @@ Here is a light wrapper that installs SSL certificates to your cPanel server and
 
 ## Usage
 
+### This step in included in the installation section which installs Let's Encrypt one time per dedicated server.
+
 `letsencrypt-cpanel-install.sh`
 
-This step in included in the installation section which installs Let's Encrypt one time per dedicated server.
+### Run one time per domain to set up a cert.
 
-`letsencrypt-cpanel-first.sh $USERNAME $DOMAIN`
+Running the command with no arguments will request cPanel username and email on stdin. If domain cannot be derived it will be requested.
 
-Run one time per domain to set up a cert. Assuming email address webmaster@$DOMAIN
+`letsencrypt-cpanel-first.sh`
 
-`letsencrypt-cpanel.sh $USERNAME $DOMAIN`
+Entering the username alone will attempt to derive the domain name and email address or will exit.
+
+`letsencrypt-cpanel-first.sh $USERNAME`
+
+Entering the username and email address will attempt to derive the domain name or exit.
+
+`letsencrypt-cpanel-first.sh $USERNAME $EMAIL`
+
+If the domain name cannot be derived because the user owns more than one name then the script will exit if all three arguments are not specified like below.
+
+`letsencrypt-cpanel-first.sh $USERNAME $DOMAIN $EMAIL`
+
+### `letsencrypt-cpanel.sh` is used by the cron for SSL renewal. 
 
 Usually run by cron for each domain once every 60 days to renew the ssl certificate, but can be manually run.
+
+`letsencrypt-cpanel.sh $USERNAME $DOMAIN`
 
 ## Installation
 
