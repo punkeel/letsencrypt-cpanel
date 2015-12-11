@@ -26,7 +26,7 @@ elif [ $# == 0 ] || [ $# > 3 ]; then
 fi
 
 
-elif [ $# == 3 ]; then
+if [ $# == 3 ]; then
   export EMAIL=$3
 elif [ $# == 2 ]; then
   export EMAIL=$2
