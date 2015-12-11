@@ -20,7 +20,7 @@ if [ "${OS_VERSION}" -ge "7" ]
   cd /root/letsencrypt
   ./letsencrypt-auto --verbose
   echo "** Done installing Git and Lets Encrypt"
-then
+then;
 fi
 
 if [ "${OS_VERSION}" -le "6" ]
@@ -33,7 +33,7 @@ if [ "${OS_VERSION}" -le "6" ]
   sed -i "s|--python python2|--python python2.7|" letsencrypt-auto
   ./letsencrypt-auto --verbose
   echo "** Done installing Python 2.7 and Lets Encrypt"
-then
+then;
 fi
 
 touch /root/installssl.pl
