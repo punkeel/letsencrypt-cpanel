@@ -23,10 +23,10 @@ if [ $# == 1 ] || [ $# == 2 ] || [ $# == 3 ]; then
 
 elif [ $# == 0 ] || [ $# >= 3 ]; then
   echo ""
-  read -e -p "Enter your cPanel username" -i "" USER
+  read -e -p "Enter your cPanel username: " -i "" USER
   export DOMAIN=$(/usr/local/bin/userdomains ${USER})
   echo ""
-  read -e -p "Enter your email address or press enter to accept the default" -i "webmaster@${DOMAIN}" EMAIL
+  read -e -p "Enter your email address or press enter to accept the default: " -i "webmaster@${DOMAIN}" EMAIL
   echo "Usage: $0 USER [EMAIL]"
   exit
 fi
