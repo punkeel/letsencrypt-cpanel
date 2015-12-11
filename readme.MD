@@ -30,6 +30,10 @@ Usually run by cron for each domain once every 60 days to renew the ssl certific
 
 When you succeed in installing then you may see the letsencrypt directory and symlinks to the executables in `/usr/local/sbin`.  In `/root/` The letsencrypt source files and a `installssl.pl` file which will install your new SSL certificates into cPanel. Also you can ensure that the intermediate certificates are listed in `/etc/letsencrypt/live/bundle.txt`.
 
+### Uninstall
+
+`sudo rm -rf /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt /usr/local/sbin/letencrypt* && echo "Uninstall Complete"`
+
 ### How to Enable EPEL Repository for RHEL/CentOS 7.x/6.x/5.x
 
 If you need a different CentOS then edit the rpm line of `letsencrypt-cpanel-install.sh` below to choose your CentOS version to use with Let's Encrypt.
