@@ -8,7 +8,7 @@ Here is a light wrapper that installs SSL certificates to your cPanel server and
 
 `letsencrypt-cpanel-install.sh`
 
-Run one time per dedicated server to install Lets Encrypt
+This step in included in the installation section which installs Let's Encrypt one time per dedicated server.
 
 `letsencrypt-cpanel-first.sh $USERNAME $DOMAIN`
 
