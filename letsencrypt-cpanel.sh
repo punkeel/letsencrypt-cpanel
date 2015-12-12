@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://forums.cpanel.net/threads/how-to-installing-ssl-from-lets-encrypt.513621/
 
-if [ $# -ne 1 ] || [ $# -ne 2 ]; then
+if [ $# -ne 1 ] && [ $# -ne 2 ]; then
   echo ""
   read -e -p "Enter your cPanel username: " -i "" USERNAME
   test $(/usr/local/sbin/userdomains ${USERNAME}|wc -l) -ne 1 &&\
