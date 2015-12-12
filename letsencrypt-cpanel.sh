@@ -11,7 +11,7 @@ if [ $# -ne 1 ] || [ $# -ne 2 ]; then
   echo "Usage: $0 USERNAME [DOMAIN]"
 fi
 
-if [ $! -ne 0 ]; then
+if [ $# -ne 0 ]; then
   export USERNAME=$1
 fi
 
