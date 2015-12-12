@@ -30,6 +30,8 @@ If the domain name cannot be derived because the user owns more than one name th
 
 ### `letsencrypt-cpanel.sh` is used by the cron for SSL renewal. 
 
+
+
 Usually run by cron for each domain once every 60 days to renew the ssl certificate, but can be manually run.
 
 `letsencrypt-cpanel.sh $USERNAME $DOMAIN`
@@ -37,6 +39,11 @@ Usually run by cron for each domain once every 60 days to renew the ssl certific
 Entering the username alone will attempt to derive the domain name or will exit.
 
 `letsencrypt-cpanel.sh $USERNAME`
+
+Running the command with no arguments will request cPanel username on stdin. If domain cannot be derived it will be requested.
+
+`letsencrypt-cpanel.sh`
+
 
 ## Installation
 
