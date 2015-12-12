@@ -143,11 +143,7 @@ f1w8DdnkabOLGeOVcj9LQ+s67vBykx4anTjURkbqZslUEUsn2k5xeua2zUk=
 -----END CERTIFICATE-----
 EOFFF
 
-
 echo '** Done installing certificate'
-
 echo '**** Usage below' 
-
 echo '** NOTE: Will need to make sure that /root/installpl.ssl exists. see https://forums.cpanel.net/threads/how-to-installing-ssl-from-lets-encrypt.513621/ for details.'
-
 echo '****'
