@@ -76,7 +76,7 @@ _Uninstalling will not remove any existing certificates._
 
 ### How to Enable EPEL Repository for RHEL/CentOS 5.x
 
-CentOS 6.x and up are supported without changing anything. If you need an earlier CentOS then edit the rpm line of `letsencrypt-cpanel-install.sh` below to choose your CentOS version to use with Let's Encrypt.
+CentOS 6.x and up is supported without changing anything. If you need an earlier CentOS then edit the rpm line of `letsencrypt-cpanel-install.sh` below to choose your CentOS version to use with Let's Encrypt.
 
 http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
 
