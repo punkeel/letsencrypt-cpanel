@@ -10,7 +10,7 @@ Here is a light wrapper that installs SSL certificates to your cPanel server and
 
 `letsencrypt-cpanel-install.sh`
 
-### Run one time per domain to set up a cert.
+### Run one time per domain to set up your new SSL Certificate.
 
 #### New Feature: 
 
