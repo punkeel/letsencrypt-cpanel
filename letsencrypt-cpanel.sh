@@ -21,7 +21,7 @@ if [ $# -eq 2 ]; then
 elif [ $# -eq 1 ]; then
   test $(/usr/local/sbin/userdomains ${USERNAME}|wc -l) -ne 1 &&\
   echo "USAGE: $0 USERNAME DOMAIN" && exit 0 ||\
-  export DOMAIN=$(/usr/local/sbin/userdomains ${USERNAME}) &&\
+  export DOMAIN=$(/usr/local/sbin/userdomains ${USERNAME})
 fi
 
 echo "Found Domain Name ${DOMAIN}"
