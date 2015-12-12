@@ -36,7 +36,7 @@ Usually run by cron for each domain once every 60 days to renew the ssl certific
 
 Entering the username alone will attempt to derive the domain name or will exit.
 
-`letsencrypt-cpanel $USERNAME`
+`letsencrypt-cpanel.sh $USERNAME`
 
 ## Installation
 
