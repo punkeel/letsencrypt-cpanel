@@ -4,7 +4,6 @@
 
 export SEPARATOR="*******************************************************\n"
 
-
 echo $SEPARATOR
 echo "USAGE: letsencrypt-cpanel-batch.sh USERNAME1 [USERNAME2 USERNAMEn]"
 echo "Rate limited to 10 certificates every three hours"
