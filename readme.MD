@@ -14,19 +14,19 @@ Here is a light wrapper that installs SSL certificates to your cPanel server and
 
 Running the command with no arguments will request cPanel username and email on stdin. If domain cannot be derived it will be requested.
 
-`letsencrypt-cpanel-first.sh`
+`letsencrypt-cpanel`
 
 Entering the username alone will attempt to derive the domain name and email address or will exit.
 
-`letsencrypt-cpanel-first.sh $USERNAME`
+`letsencrypt-cpanel $USERNAME`
 
 Entering the username and email address will attempt to derive the domain name or exit.
 
-`letsencrypt-cpanel-first.sh $USERNAME $EMAIL`
+`letsencrypt-cpanel $USERNAME $EMAIL`
 
 If the domain name cannot be derived because the user owns more than one name then the script will exit if all three arguments are not specified like below.
 
-`letsencrypt-cpanel-first.sh $USERNAME $DOMAIN $EMAIL`
+`letsencrypt-cpanel $USERNAME $DOMAIN $EMAIL`
 
 ### `letsencrypt-cpanel.sh` is used by the cron for SSL renewal. 
 
