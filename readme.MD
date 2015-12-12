@@ -12,6 +12,14 @@ Here is a light wrapper that installs SSL certificates to your cPanel server and
 
 ### Run one time per domain to set up a cert.
 
+#### New Feature: 
+
+Running this command installs the SSL certificate for all of your cPanel users while respecting Let's Encrypt rate limiting.  
+
+_NOTE: If any of your usernames own more than one domain the script may quit._
+
+`letsencrypt-cpanel-all.sh`
+
 Running the command with no arguments will request cPanel username and email on stdin. If domain cannot be derived it will be requested.
 
 `letsencrypt-cpanel`
