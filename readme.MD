@@ -30,8 +30,6 @@ If the domain name cannot be derived because the user owns more than one name th
 
 ### `letsencrypt-cpanel.sh` is used by the cron for SSL renewal. 
 
-
-
 Usually run by cron for each domain once every 60 days to renew the ssl certificate, but can be manually run.
 
 `letsencrypt-cpanel.sh $USERNAME $DOMAIN`
@@ -44,6 +42,11 @@ Running the command with no arguments will request cPanel username on stdin. If 
 
 `letsencrypt-cpanel.sh`
 
+### Batch SSL renewal. 
+
+Can renew the ssl certificate for multiple usernames. If a username owns more than one domain then the script will exit.
+
+`letsencrypt-cpanel-batch.sh $USERNAME [$USERNAME2 $USERNAME3 $USERNAMEn]`
 
 ## Installation
 
@@ -62,7 +65,6 @@ When you succeed in installing then you may see the letsencrypt directory and sy
 _Uninstalling will not remove any existing certificates._
 
 `sudo rm -rf /usr/local/sbin/letsencrypt /usr/local/sbin/letsencrypt* /usr/local/sbin/userdomains /root/letsencrypt /root/installssl.pl /etc/letsencrypt/live/bundle.txt && echo "Uninstall Complete: You can paste in verification to ensure the files are gone."`
-
 
 ### How to Enable EPEL Repository for RHEL/CentOS 7.x/6.x/5.x
 
