@@ -81,6 +81,9 @@ CentOS 6.x and up is supported without changing anything. If you need an earlier
 http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
 
 ### How to determine which of your cPanel Users own multiple domains
+
+If you need to manually run `lets-encrypt-cpanel $USERNAME $DOMAIN $EMAIL` because your cPanel user owns multiple domains then you can run the following command and use this information to easily derive the usernames and domains to use.  I believe you can use arbitrary email addresses.
+
 `USERS=$(ls /var/cpanel/users); for i in $USERS; do SITES=$(userdomains $i|wc -l); COUNT=$(echo $SITES $i); echo $COUNT; done|grep -v ^[01] | cut -d" " -f2 > ~/multidomainuser.txt && while read in;  do echo "" && echo $in && echo "" && userdomains "$in"; done < ~/multidomainuser.txt|grep -v \*`
 
 ## Notes
