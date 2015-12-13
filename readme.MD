@@ -80,6 +80,9 @@ CentOS 6.x and up is supported without changing anything. If you need an earlier
 
 http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
 
+### How to determine which of your cPanel Users own multiple domains
+`USERS=$(ls /var/cpanel/users); for i in $USERS; do SITES=$(userdomains $i|wc -l); COUNT=$(echo $SITES $i); echo $COUNT; done|grep -v ^[01] | cut -d" " -f2 > ~/multidomainuser.txt && while read in;  do echo "" && echo $in && echo "" && userdomains "$in"; done < ~/multidomainuser.txt|grep -v \*`
+
 ## Notes
 
 * The script downloads and sets up your python environment to use Let's Encrypt with cPanel
