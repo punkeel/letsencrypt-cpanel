@@ -84,7 +84,7 @@ http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
 
 If you need to manually run `lets-encrypt-cpanel $USERNAME $DOMAIN $EMAIL` because your cPanel user owns multiple domains then you can run the following command and use this information to easily derive the usernames and domains to use.  I believe you can use arbitrary email addresses.
 
-`USERS=$(ls /var/cpanel/users); for i in $USERS; do SITES=$(userdomains $i|wc -l); COUNT=$(echo $SITES $i); echo $COUNT; done|grep -v ^[01] | cut -d" " -f2 > ~/multidomainuser.txt && while read in; do userdomains "$in"; done < ~/multidomainuser.txt|grep -v \* > ~/multipledomain.txt && while read in; do echo $(/scripts/whoowns $in) $in webmaster@${in}; done < ~/multipledomain.txt > ~/multiplelist.txt; while read in; do echo "/usr/local/sbin/letsencrypt-cpanel $in"; done < ~/multiplelist.txt`
+`USERS=$(ls /var/cpanel/users); for i in $USERS; do SITES=$(userdomains $i|wc -l); COUNT=$(echo $SITES $i); echo $COUNT; done|grep -v ^[01] | cut -d" " -f2 > ~/multidomainuser.txt && while read in; do userdomains "$in"; done < ~/multidomainuser.txt|grep -v \* > ~/multipledomain.txt && while read in; do echo $(/scripts/whoowns $in) $in webmaster@${in}; done < ~/multipledomain.txt > ~/multiplelist.txt; echo '#!/bin/bash' && while read in; do echo "/usr/local/sbin/letsencrypt-cpanel $in"; done < ~/multiplelist.txt`
 
 ## Notes
 
